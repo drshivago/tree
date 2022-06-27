@@ -1,3 +1,34 @@
+// Definition for a binary tree node.
+use std::rc::Rc;
+use std::cell::RefCell;
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+   pub val: i32,
+   pub left: Option<Rc<RefCell<TreeNode>>>,
+   pub right: Option<Rc<RefCell<TreeNode>>>,
+}
+
+impl TreeNode {
+   #[inline]
+   pub fn new(val: i32) -> Self {
+     TreeNode {
+       val,
+       left: None,
+       right: None
+     }
+   }
+
+   pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+       let mut list = vec![];
+
+        if root.left.val.unwrap() == Some(){
+            root = root.left.unwrap();
+        }
+    }
+}
+
 fn main() {
-    println!("Hello, world!");
+    //make tree
+    let tree: TreeNode = TreeNode::new(1);
+    let tree2: TreeNode = TreeNode::new(2);
 }
